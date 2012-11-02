@@ -1,8 +1,8 @@
 /*
- * amigo_tut1.cpp
+ * amigo.cpp
  *
  *  Created on: 26.10.2012
- *      Author: mario
+ *      Author: Mario
  */
 
 #include "std_msgs/String.h"
@@ -55,6 +55,9 @@ int main(int argc, char **argv)
   cmd.linear.y = 1;
   cmd.angular.z = 1;
 
+  /*
+   * Über cmdPub eine Geschwindigkeit und Winkelgeschwindigkeit vorgeben.
+   */
 
   while (true)
   {
