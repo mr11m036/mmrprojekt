@@ -1,0 +1,16 @@
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/clean-test-results.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rosbuild_precompile.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rospack_genmsg.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rospack_gensrv.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/test.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/test-future.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/test-results.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/test-results-run.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/tests.dir
