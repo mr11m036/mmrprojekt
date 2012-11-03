@@ -4,6 +4,7 @@
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/clean-test-results.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libTELEOP.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rosbuild_precompile.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rosbuild_premsgsrvgen.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/rospack_genmsg.dir

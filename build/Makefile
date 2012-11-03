@@ -174,6 +174,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named libTELEOP
+
+# Build rule for target.
+libTELEOP: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libTELEOP
+.PHONY : libTELEOP
+
+# fast build rule for target.
+libTELEOP/fast:
+	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/build
+.PHONY : libTELEOP/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_precompile
 
 # Build rule for target.
@@ -318,6 +331,21 @@ src/amigo.s:
 	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.s
 .PHONY : src/amigo.s
 
+# target to build an object file
+src/libTELEOP.o:
+	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.o
+.PHONY : src/libTELEOP.o
+
+# target to preprocess a source file
+src/libTELEOP.i:
+	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.i
+.PHONY : src/libTELEOP.i
+
+# target to generate assembly for a file
+src/libTELEOP.s:
+	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.s
+.PHONY : src/libTELEOP.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -331,6 +359,7 @@ help:
 	@echo "... amigo"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
+	@echo "... libTELEOP"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -345,6 +374,9 @@ help:
 	@echo "... src/amigo.o"
 	@echo "... src/amigo.i"
 	@echo "... src/amigo.s"
+	@echo "... src/libTELEOP.o"
+	@echo "... src/libTELEOP.i"
+	@echo "... src/libTELEOP.s"
 .PHONY : help
 
 

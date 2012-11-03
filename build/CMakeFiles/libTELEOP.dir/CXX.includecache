@@ -1576,17 +1576,19 @@ ros/assert.h
 std_msgs/Header.h
 /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/std_msgs/Header.h
 
-/home/mario/ros_workspace/mmrporjekt/src/amigo.cpp
-libTELEOP.h
-/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
-std_msgs/String.h
-/home/mario/ros_workspace/mmrporjekt/src/std_msgs/String.h
+/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp
 stdio.h
 -
 math.h
 -
 Aria.h
 -
+sensor_msgs/PointCloud.h
+-
+libTELEOP.h
+/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
+std_msgs/String.h
+/home/mario/ros_workspace/mmrporjekt/src/std_msgs/String.h
 ros/ros.h
 /home/mario/ros_workspace/mmrporjekt/src/ros/ros.h
 geometry_msgs/Twist.h
@@ -1595,8 +1597,6 @@ geometry_msgs/Pose.h
 /home/mario/ros_workspace/mmrporjekt/src/geometry_msgs/Pose.h
 geometry_msgs/PoseStamped.h
 /home/mario/ros_workspace/mmrporjekt/src/geometry_msgs/PoseStamped.h
-sensor_msgs/PointCloud.h
--
 nav_msgs/Odometry.h
 /home/mario/ros_workspace/mmrporjekt/src/nav_msgs/Odometry.h
 ROSARIA/BumperState.h

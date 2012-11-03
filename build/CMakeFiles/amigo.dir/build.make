@@ -130,6 +130,7 @@ amigo_OBJECTS = \
 amigo_EXTERNAL_OBJECTS =
 
 ../bin/amigo: CMakeFiles/amigo.dir/src/amigo.o
+../bin/amigo: ../lib/liblibTELEOP.so
 ../bin/amigo: CMakeFiles/amigo.dir/build.make
 ../bin/amigo: CMakeFiles/amigo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/amigo"
