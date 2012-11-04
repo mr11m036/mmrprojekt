@@ -161,6 +161,19 @@ amigo/fast:
 .PHONY : amigo/fast
 
 #=============================================================================
+# Target rules for targets named amigo_sensors
+
+# Build rule for target.
+amigo_sensors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 amigo_sensors
+.PHONY : amigo_sensors
+
+# fast build rule for target.
+amigo_sensors/fast:
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/build
+.PHONY : amigo_sensors/fast
+
+#=============================================================================
 # Target rules for targets named clean-test-results
 
 # Build rule for target.
@@ -174,17 +187,17 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
-# Target rules for targets named libTELEOP
+# Target rules for targets named libAMIGO
 
 # Build rule for target.
-libTELEOP: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libTELEOP
-.PHONY : libTELEOP
+libAMIGO: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libAMIGO
+.PHONY : libAMIGO
 
 # fast build rule for target.
-libTELEOP/fast:
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/build
-.PHONY : libTELEOP/fast
+libAMIGO/fast:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/build
+.PHONY : libAMIGO/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -332,18 +345,48 @@ src/amigo.s:
 .PHONY : src/amigo.s
 
 # target to build an object file
+src/amigo_sensors.o:
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o
+.PHONY : src/amigo_sensors.o
+
+# target to preprocess a source file
+src/amigo_sensors.i:
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/src/amigo_sensors.i
+.PHONY : src/amigo_sensors.i
+
+# target to generate assembly for a file
+src/amigo_sensors.s:
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/src/amigo_sensors.s
+.PHONY : src/amigo_sensors.s
+
+# target to build an object file
+src/libSENSOR.o:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libSENSOR.o
+.PHONY : src/libSENSOR.o
+
+# target to preprocess a source file
+src/libSENSOR.i:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libSENSOR.i
+.PHONY : src/libSENSOR.i
+
+# target to generate assembly for a file
+src/libSENSOR.s:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libSENSOR.s
+.PHONY : src/libSENSOR.s
+
+# target to build an object file
 src/libTELEOP.o:
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.o
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libTELEOP.o
 .PHONY : src/libTELEOP.o
 
 # target to preprocess a source file
 src/libTELEOP.i:
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.i
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libTELEOP.i
 .PHONY : src/libTELEOP.i
 
 # target to generate assembly for a file
 src/libTELEOP.s:
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/src/libTELEOP.s
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libTELEOP.s
 .PHONY : src/libTELEOP.s
 
 # Help Target
@@ -357,9 +400,10 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... amigo"
+	@echo "... amigo_sensors"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
-	@echo "... libTELEOP"
+	@echo "... libAMIGO"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -374,6 +418,12 @@ help:
 	@echo "... src/amigo.o"
 	@echo "... src/amigo.i"
 	@echo "... src/amigo.s"
+	@echo "... src/amigo_sensors.o"
+	@echo "... src/amigo_sensors.i"
+	@echo "... src/amigo_sensors.s"
+	@echo "... src/libSENSOR.o"
+	@echo "... src/libSENSOR.i"
+	@echo "... src/libSENSOR.s"
 	@echo "... src/libTELEOP.o"
 	@echo "... src/libTELEOP.i"
 	@echo "... src/libTELEOP.s"

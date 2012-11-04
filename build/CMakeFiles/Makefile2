@@ -178,7 +178,7 @@ clean: CMakeFiles/ROSBUILD_gensrv_lisp.dir/clean
 
 # All Build rule for target.
 CMakeFiles/amigo.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-CMakeFiles/amigo.dir/all: CMakeFiles/libTELEOP.dir/all
+CMakeFiles/amigo.dir/all: CMakeFiles/libAMIGO.dir/all
 	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/depend
 	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  1
@@ -191,7 +191,7 @@ all: CMakeFiles/amigo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/amigo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amigo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
 .PHONY : CMakeFiles/amigo.dir/rule
@@ -207,6 +207,42 @@ CMakeFiles/amigo.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/amigo.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/amigo_sensors.dir
+
+# All Build rule for target.
+CMakeFiles/amigo_sensors.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+CMakeFiles/amigo_sensors.dir/all: CMakeFiles/libAMIGO.dir/all
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/depend
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  2
+	@echo "Built target amigo_sensors"
+.PHONY : CMakeFiles/amigo_sensors.dir/all
+
+# Include target in all.
+all: CMakeFiles/amigo_sensors.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/amigo_sensors.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amigo_sensors.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
+.PHONY : CMakeFiles/amigo_sensors.dir/rule
+
+# Convenience name for target.
+amigo_sensors: CMakeFiles/amigo_sensors.dir/rule
+.PHONY : amigo_sensors
+
+# clean rule for target.
+CMakeFiles/amigo_sensors.dir/clean:
+	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/clean
+.PHONY : CMakeFiles/amigo_sensors.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/amigo_sensors.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -241,38 +277,38 @@ clean: CMakeFiles/clean-test-results.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/libTELEOP.dir
+# Target rules for target CMakeFiles/libAMIGO.dir
 
 # All Build rule for target.
-CMakeFiles/libTELEOP.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/depend
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  2
-	@echo "Built target libTELEOP"
-.PHONY : CMakeFiles/libTELEOP.dir/all
+CMakeFiles/libAMIGO.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/depend
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  3 4
+	@echo "Built target libAMIGO"
+.PHONY : CMakeFiles/libAMIGO.dir/all
 
 # Include target in all.
-all: CMakeFiles/libTELEOP.dir/all
+all: CMakeFiles/libAMIGO.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/libTELEOP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libTELEOP.dir/all
+CMakeFiles/libAMIGO.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libAMIGO.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/libTELEOP.dir/rule
+.PHONY : CMakeFiles/libAMIGO.dir/rule
 
 # Convenience name for target.
-libTELEOP: CMakeFiles/libTELEOP.dir/rule
-.PHONY : libTELEOP
+libAMIGO: CMakeFiles/libAMIGO.dir/rule
+.PHONY : libAMIGO
 
 # clean rule for target.
-CMakeFiles/libTELEOP.dir/clean:
-	$(MAKE) -f CMakeFiles/libTELEOP.dir/build.make CMakeFiles/libTELEOP.dir/clean
-.PHONY : CMakeFiles/libTELEOP.dir/clean
+CMakeFiles/libAMIGO.dir/clean:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/clean
+.PHONY : CMakeFiles/libAMIGO.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/libTELEOP.dir/clean
+clean: CMakeFiles/libAMIGO.dir/clean
 .PHONY : clean
 
 #=============================================================================
