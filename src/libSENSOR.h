@@ -49,11 +49,8 @@ class SensorSonar
   void init()
   {
 	queue_size=1;
-
-
     sub = nh_.subscribe <sensor_msgs::PointCloud>  ("/RosAria/sonar",1, &SensorSonar::callback, this);
 	ros::NodeHandle n_private("~");
-
   }
 
 
