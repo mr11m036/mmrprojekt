@@ -142,7 +142,6 @@ CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: /home/mario/ros_workspace/hg/A
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/BumperState.h
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: ../src/amigo_sensors.cpp
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: ../src/libSENSOR.h
-CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: ../src/libTELEOP.h
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: /opt/ros/electric/stacks/bullet/include/LinearMath/btMatrix3x3.h
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: /opt/ros/electric/stacks/bullet/include/LinearMath/btMinMax.h
 CMakeFiles/amigo_sensors.dir/src/amigo_sensors.o: /opt/ros/electric/stacks/bullet/include/LinearMath/btQuadWord.h

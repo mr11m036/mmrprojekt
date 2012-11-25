@@ -13,6 +13,7 @@
 
 \**********************************************************************/
 
+
 #ifndef _INCL_SENSOR
 #define _INCL_SENSOR
 /*--- #includes der Form <...> ---------------------------------------*/
@@ -36,6 +37,7 @@
 #include "tf/transform_datatypes.h"
 
 
+
 class SensorSonar
 {
   private:
@@ -43,14 +45,39 @@ class SensorSonar
   ros::Subscriber sub;
   uint32_t queue_size;
 
+ /* Der AmigoBot hat 8 Ultraschallsensoren.
+	Nr. 0: +90
+	Nr. 1: +41
+	Nr. 2: +15
+	Nr. 3: -15
+	Nr. 4: -41
+	Nr. 5: -90
+	Nr. 6: -145
+	Nr. 7: +145
+
+		  +90
+	+145   |    +15
+	-------|-------> Vorne
+	-145   |    -15
+          -90
+*/
+
+  float calcDistance(float x, float y);
 
   public:
+
+  float  distCurrent[8];
+
+  float getDistance (int sensornr);
+
+ // SensorSonar() : SIZESENSOR (8) {queue_size=1;}
 
   void init()
   {
 	queue_size=1;
     sub = nh_.subscribe <sensor_msgs::PointCloud>  ("/RosAria/sonar",1, &SensorSonar::callback, this);
 	ros::NodeHandle n_private("~");
+
   }
 
 

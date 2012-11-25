@@ -81,8 +81,9 @@
 #define KEYCODE_W_CAP 0x57
 #define KEYCODE_Q_CAP 0x51
 #define KEYCODE_E_CAP 0x45
-  int kfd = 0;
-  struct termios cooked, raw;
+
+int kfd = 0;
+struct termios cooked, raw;
 
 class TeleopAmigoKeyboard
 {

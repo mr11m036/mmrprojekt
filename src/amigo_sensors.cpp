@@ -6,13 +6,12 @@
  */
 
 
-
-#include "libTELEOP.h"
 #include "libSENSOR.h"
 #include "std_msgs/String.h"
 #include <stdio.h>
 #include <math.h>
 #include <Aria.h>
+#include <ncurses.h>
 
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
@@ -24,31 +23,45 @@
 #include "tf/tf.h"
 #include "tf/transform_listener.h"	//for tf::getPrefixParam
 #include "tf/transform_datatypes.h"
+//#include "libSENSOR.h"
 
-
-
+/*
 void quit(int sig)
 {
   tcsetattr(kfd, TCSANOW, &cooked);
   exit(0);
-}
+}*/
 
 int main(int argc, char **argv)
 {
 
   ros::init(argc, argv, "amigo_sensors_sonar");
-
+//float test;
   SensorSonar senson;
   senson.init();
   ros::Rate pub_rate(20);
-  signal(SIGINT,quit);
+ // signal(SIGINT,quit);
+
+  initscr();			/* Start curses mode 		*/
+
 
   while (true)
     {
-    ros::spinOnce();
-    pub_rate.sleep();
+	  ros::spinOnce();
+	  pub_rate.sleep();
+	  clear();
+	  printw ("Sensor 0: %f\n", senson.getDistance(0));
+	  printw ("Sensor 1: %f\n", senson.getDistance(1));
+	  printw ("Sensor 2: %f\n", senson.getDistance(2));
+	  printw ("Sensor 3: %f\n", senson.getDistance(3));
+	  printw ("Sensor 4: %f\n", senson.getDistance(4));
+	  printw ("Sensor 5: %f\n", senson.getDistance(5));
+	  printw ("Sensor 6: %f\n", senson.getDistance(6));
+	  printw ("Sensor 7: %f\n", senson.getDistance(7));
+	  refresh();
     }
-
+endwin();
+  //endwin();
   return 0;
 }
 

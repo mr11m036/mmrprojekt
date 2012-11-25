@@ -1577,8 +1577,6 @@ std_msgs/Header.h
 /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/std_msgs/Header.h
 
 /home/mario/ros_workspace/mmrporjekt/src/amigo_sensors.cpp
-libTELEOP.h
-/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
 libSENSOR.h
 /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.h
 std_msgs/String.h
@@ -1589,6 +1587,8 @@ math.h
 -
 Aria.h
 -
+ncurses.h
+-
 ros/ros.h
 /home/mario/ros_workspace/mmrporjekt/src/ros/ros.h
 geometry_msgs/Twist.h
@@ -1611,36 +1611,6 @@ tf/transform_datatypes.h
 /home/mario/ros_workspace/mmrporjekt/src/tf/transform_datatypes.h
 
 /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.h
-stdio.h
--
-math.h
--
-Aria.h
--
-sensor_msgs/PointCloud.h
--
-std_msgs/String.h
-/home/mario/ros_workspace/mmrporjekt/src/std_msgs/String.h
-ros/ros.h
-/home/mario/ros_workspace/mmrporjekt/src/ros/ros.h
-geometry_msgs/Twist.h
-/home/mario/ros_workspace/mmrporjekt/src/geometry_msgs/Twist.h
-geometry_msgs/Pose.h
-/home/mario/ros_workspace/mmrporjekt/src/geometry_msgs/Pose.h
-geometry_msgs/PoseStamped.h
-/home/mario/ros_workspace/mmrporjekt/src/geometry_msgs/PoseStamped.h
-nav_msgs/Odometry.h
-/home/mario/ros_workspace/mmrporjekt/src/nav_msgs/Odometry.h
-ROSARIA/BumperState.h
-/home/mario/ros_workspace/mmrporjekt/src/ROSARIA/BumperState.h
-tf/tf.h
-/home/mario/ros_workspace/mmrporjekt/src/tf/tf.h
-tf/transform_listener.h
-/home/mario/ros_workspace/mmrporjekt/src/tf/transform_listener.h
-tf/transform_datatypes.h
-/home/mario/ros_workspace/mmrporjekt/src/tf/transform_datatypes.h
-
-/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
 stdio.h
 -
 math.h

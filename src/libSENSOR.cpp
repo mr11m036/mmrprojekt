@@ -17,19 +17,20 @@
 #include <math.h>
 #include <Aria.h>
 #include <sensor_msgs/PointCloud.h>     //for sonar data
-
-/*--- #includes der Form "..." ---------------------------------------*/
 #include <string>
 #include <vector>
 #include <map>
 #include <ostream>
+#include <float.h>
+#include <stdexcept>
+
+/*--- #includes der Form "..." ---------------------------------------*/
+
 #include "ros/serialization.h"
 #include "ros/builtin_message_traits.h"
 #include "ros/message_operations.h"
 #include "ros/time.h"
-
 #include "ros/macros.h"
-
 #include "ros/assert.h"
 #include <bits/stl_iterator_base_funcs.h>
 #include <bits/functexcept.h>
@@ -50,21 +51,57 @@
 #include "tf/transform_listener.h"	//for tf::getPrefixParam
 #include "tf/transform_datatypes.h"
 
-using namespace sensor_msgs;
+
+using namespace std;
 
 void SensorSonar::callback(const sensor_msgs::PointCloud::ConstPtr &msg)
 {
 
-	float sx,sy,sz;
-
 	// Dieser Link war hilfreich.
 	//http://www.ros.org/wiki/navigation/Tutorials/RobotSetup/Sensors
-	sx = msg->points[1].x;
-	sy = msg->points[1].x;
-	sz = msg->points[1].x;
-	printf ("Cloud: x = %f, y = %f, z = %f\n", sx, sy, sz);
+	//sx = msg->points[1].x;
+	//sy = msg->points[1].y;
+	//sz = msg->points[1].z;
+	//printf ("Cloud: x = %f, y = %f, z = %f\n", sx, sy, sz);
 
-
+	for (int i=0; i < 8; i++) {
+		SensorSonar::distCurrent[i] = SensorSonar::calcDistance(msg->points[i].x, msg->points[i].y);
+		// sz will always remain 0.
+	}
 
 }
+
+
+float SensorSonar::getDistance(int sensornr) {
+	float result;
+	try {
+		if (sensornr >= 8)
+			throw "distanceCurrent out of bounds. Return value set to 0.";
+	} catch (char * str) {
+		cout << "Exception raised: " << str << '\n';
+		result = 0;
+		return result;
+	}
+
+	result = SensorSonar::distCurrent[sensornr];
+	return result;
+
+}
+
+float SensorSonar::calcDistance(float x, float y) {
+	double result;
+	try {
+	result = sqrt(pow(x, 2) + pow(y, 2));
+	if (result > FLT_MAX)
+		throw "Float overflow in calcDistance. Return value set to 0.";
+	}
+	catch (char * str) {
+		result = 0;
+		cout << "Exception raised: " << str << '\n';
+	}
+
+	return result;
+
+}
+
 
