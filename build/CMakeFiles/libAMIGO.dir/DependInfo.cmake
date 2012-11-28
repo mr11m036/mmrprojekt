@@ -4,6 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp" "/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libAMIGO.dir/src/libROBOT.o"
   "/home/mario/ros_workspace/mmrporjekt/src/libSENSOR.cpp" "/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libAMIGO.dir/src/libSENSOR.o"
   "/home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp" "/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libAMIGO.dir/src/libTELEOP.o"
   )

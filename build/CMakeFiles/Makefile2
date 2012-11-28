@@ -174,39 +174,39 @@ clean: CMakeFiles/ROSBUILD_gensrv_lisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/amigo.dir
+# Target rules for target CMakeFiles/amigo_behave.dir
 
 # All Build rule for target.
-CMakeFiles/amigo.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-CMakeFiles/amigo.dir/all: CMakeFiles/libAMIGO.dir/all
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/depend
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/build
+CMakeFiles/amigo_behave.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+CMakeFiles/amigo_behave.dir/all: CMakeFiles/libAMIGO.dir/all
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/depend
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  1
-	@echo "Built target amigo"
-.PHONY : CMakeFiles/amigo.dir/all
+	@echo "Built target amigo_behave"
+.PHONY : CMakeFiles/amigo_behave.dir/all
 
 # Include target in all.
-all: CMakeFiles/amigo.dir/all
+all: CMakeFiles/amigo_behave.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/amigo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amigo.dir/all
+CMakeFiles/amigo_behave.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amigo_behave.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/amigo.dir/rule
+.PHONY : CMakeFiles/amigo_behave.dir/rule
 
 # Convenience name for target.
-amigo: CMakeFiles/amigo.dir/rule
-.PHONY : amigo
+amigo_behave: CMakeFiles/amigo_behave.dir/rule
+.PHONY : amigo_behave
 
 # clean rule for target.
-CMakeFiles/amigo.dir/clean:
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/clean
-.PHONY : CMakeFiles/amigo.dir/clean
+CMakeFiles/amigo_behave.dir/clean:
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/clean
+.PHONY : CMakeFiles/amigo_behave.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/amigo.dir/clean
+clean: CMakeFiles/amigo_behave.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -227,7 +227,7 @@ all: CMakeFiles/amigo_sensors.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/amigo_sensors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amigo_sensors.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
 .PHONY : CMakeFiles/amigo_sensors.dir/rule
@@ -283,7 +283,7 @@ clean: CMakeFiles/clean-test-results.dir/clean
 CMakeFiles/libAMIGO.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/depend
 	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  3 4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles  3 4 5
 	@echo "Built target libAMIGO"
 .PHONY : CMakeFiles/libAMIGO.dir/all
 
@@ -293,7 +293,7 @@ all: CMakeFiles/libAMIGO.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/libAMIGO.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libAMIGO.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles 0
 .PHONY : CMakeFiles/libAMIGO.dir/rule

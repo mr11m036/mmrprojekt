@@ -148,17 +148,17 @@ ROSBUILD_gensrv_lisp/fast:
 .PHONY : ROSBUILD_gensrv_lisp/fast
 
 #=============================================================================
-# Target rules for targets named amigo
+# Target rules for targets named amigo_behave
 
 # Build rule for target.
-amigo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 amigo
-.PHONY : amigo
+amigo_behave: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 amigo_behave
+.PHONY : amigo_behave
 
 # fast build rule for target.
-amigo/fast:
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/build
-.PHONY : amigo/fast
+amigo_behave/fast:
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/build
+.PHONY : amigo_behave/fast
 
 #=============================================================================
 # Target rules for targets named amigo_sensors
@@ -330,19 +330,19 @@ tests/fast:
 .PHONY : tests/fast
 
 # target to build an object file
-src/amigo.o:
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.o
-.PHONY : src/amigo.o
+src/amigo_behave.o:
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/src/amigo_behave.o
+.PHONY : src/amigo_behave.o
 
 # target to preprocess a source file
-src/amigo.i:
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.i
-.PHONY : src/amigo.i
+src/amigo_behave.i:
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/src/amigo_behave.i
+.PHONY : src/amigo_behave.i
 
 # target to generate assembly for a file
-src/amigo.s:
-	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.s
-.PHONY : src/amigo.s
+src/amigo_behave.s:
+	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/src/amigo_behave.s
+.PHONY : src/amigo_behave.s
 
 # target to build an object file
 src/amigo_sensors.o:
@@ -358,6 +358,21 @@ src/amigo_sensors.i:
 src/amigo_sensors.s:
 	$(MAKE) -f CMakeFiles/amigo_sensors.dir/build.make CMakeFiles/amigo_sensors.dir/src/amigo_sensors.s
 .PHONY : src/amigo_sensors.s
+
+# target to build an object file
+src/libROBOT.o:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libROBOT.o
+.PHONY : src/libROBOT.o
+
+# target to preprocess a source file
+src/libROBOT.i:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libROBOT.i
+.PHONY : src/libROBOT.i
+
+# target to generate assembly for a file
+src/libROBOT.s:
+	$(MAKE) -f CMakeFiles/libAMIGO.dir/build.make CMakeFiles/libAMIGO.dir/src/libROBOT.s
+.PHONY : src/libROBOT.s
 
 # target to build an object file
 src/libSENSOR.o:
@@ -399,7 +414,7 @@ help:
 	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
-	@echo "... amigo"
+	@echo "... amigo_behave"
 	@echo "... amigo_sensors"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
@@ -415,12 +430,15 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... src/amigo.o"
-	@echo "... src/amigo.i"
-	@echo "... src/amigo.s"
+	@echo "... src/amigo_behave.o"
+	@echo "... src/amigo_behave.i"
+	@echo "... src/amigo_behave.s"
 	@echo "... src/amigo_sensors.o"
 	@echo "... src/amigo_sensors.i"
 	@echo "... src/amigo_sensors.s"
+	@echo "... src/libROBOT.o"
+	@echo "... src/libROBOT.i"
+	@echo "... src/libROBOT.s"
 	@echo "... src/libSENSOR.o"
 	@echo "... src/libSENSOR.i"
 	@echo "... src/libSENSOR.s"
