@@ -2,6 +2,7 @@
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo_behave.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo_sensors.dir
 /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/clean-test-results.dir

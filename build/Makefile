@@ -148,6 +148,19 @@ ROSBUILD_gensrv_lisp/fast:
 .PHONY : ROSBUILD_gensrv_lisp/fast
 
 #=============================================================================
+# Target rules for targets named amigo
+
+# Build rule for target.
+amigo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 amigo
+.PHONY : amigo
+
+# fast build rule for target.
+amigo/fast:
+	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/build
+.PHONY : amigo/fast
+
+#=============================================================================
 # Target rules for targets named amigo_behave
 
 # Build rule for target.
@@ -330,6 +343,21 @@ tests/fast:
 .PHONY : tests/fast
 
 # target to build an object file
+src/amigo.o:
+	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.o
+.PHONY : src/amigo.o
+
+# target to preprocess a source file
+src/amigo.i:
+	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.i
+.PHONY : src/amigo.i
+
+# target to generate assembly for a file
+src/amigo.s:
+	$(MAKE) -f CMakeFiles/amigo.dir/build.make CMakeFiles/amigo.dir/src/amigo.s
+.PHONY : src/amigo.s
+
+# target to build an object file
 src/amigo_behave.o:
 	$(MAKE) -f CMakeFiles/amigo_behave.dir/build.make CMakeFiles/amigo_behave.dir/src/amigo_behave.o
 .PHONY : src/amigo_behave.o
@@ -414,6 +442,7 @@ help:
 	@echo "... ROSBUILD_genmsg_lisp"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
+	@echo "... amigo"
 	@echo "... amigo_behave"
 	@echo "... amigo_sensors"
 	@echo "... clean-test-results"
@@ -430,6 +459,9 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... src/amigo.o"
+	@echo "... src/amigo.i"
+	@echo "... src/amigo.s"
 	@echo "... src/amigo_behave.o"
 	@echo "... src/amigo_behave.i"
 	@echo "... src/amigo_behave.s"

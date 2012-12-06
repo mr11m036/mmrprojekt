@@ -172,7 +172,7 @@ void RosAriaNode::publish()
     bumpers.front_bumpers[i] = (front_bumpers & (1 << (i+1))) == 0 ? 0 : 1;
     bumper_info << " " << (front_bumpers & (1 << (i+1)));
   }
-  ROS_INFO("Front bumpers:%s", bumper_info.str().c_str());
+  //ROS_INFO("Front bumpers:%s", bumper_info.str().c_str());
 
   bumper_info.str("");
   // Rear bumpers have reverse order (rightmost is LSB)
@@ -182,7 +182,7 @@ void RosAriaNode::publish()
     bumpers.rear_bumpers[i] = (rear_bumpers & (1 << (numRearBumpers-i))) == 0 ? 0 : 1;
     bumper_info << " " << (rear_bumpers & (1 << (numRearBumpers-i)));
   }
-  ROS_INFO("Rear bumpers:%s", bumper_info.str().c_str());
+  //ROS_INFO("Rear bumpers:%s", bumper_info.str().c_str());
 
   bumpers_pub.publish(bumpers);
 
@@ -264,6 +264,7 @@ int RosAriaNode::beLib(int id)//int id is the Behavior ID of the Behavior that i
 
 	case 1:
 		//Demo Behavior with ID 1: Simple avoidance behavior
+		  ROS_INFO("bSimpleAvoid");
 		return bSimpleAvoid();
 		break;
 
@@ -271,9 +272,7 @@ int RosAriaNode::beLib(int id)//int id is the Behavior ID of the Behavior that i
 		//Demo Behavior with ID 2: Simple goto behavior
 		return bGotoXY();
 		break;
-	default:
-		return 0;
-		break;
+
 	}
 	return 0;
 }
@@ -408,7 +407,7 @@ int RosAriaNode::bSimpleAvoid()
 	double dSideTrigDist = readParam(1,3);
 	double dSideVelMod = readParam(1,4);
 	double dActiveDist = readParam(1,5);
-
+	  ROS_INFO("dFrontTrigDist:%f", dFrontTrigDist);
 	int iLMod = 1;//Modifiers used to implement rotation
 	int iRMod = 1;
 
@@ -420,21 +419,26 @@ int RosAriaNode::bSimpleAvoid()
 		if((robot->getSonarRange(2) < dFrontTrigDist)||(robot->getSonarRange(3) < dFrontTrigDist))//Checks if the object is to the front
 		{
 			dRealVel *= dFrontVelMod;//Decreases velocity
+			  //ROS_INFO("Decreasing velocity to :%f", dRealVel);
 		}
 
 		if((robot->getSonarRange(0) < dSideTrigDist) || (robot->getSonarRange(1) < dSideTrigDist))//Checks if the object is to the left
 		{
 			iLMod = -1;//Sets the modifier for the left wheel to -1 so that the robot will steer to the right
 			dRealVel *= dSideVelMod;//Velocity is modified
+			 // ROS_INFO("Decreasing to :%f", dRealVel);
 		}
 
 		if((robot->getSonarRange(4) < dSideTrigDist) || (robot->getSonarRange(5) < dSideTrigDist))
 		{
 			iRMod = -1;
 			dRealVel *= dSideVelMod;
+
 		}
 		dVelLeft += iLMod * dRealVel;//Calculated motor data is passed on to the global velocity control variables
 		dVelRight += iRMod * dRealVel;
+		  ROS_INFO("dVelLeft:%f", dVelLeft);
+		  ROS_INFO("dVelRight:%f", dVelRight);
 		return 1;
 	}
 	else

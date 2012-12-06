@@ -401,6 +401,7 @@ CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/common_msgs/ge
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/common_msgs/nav_msgs/msg_gen/cpp/include/nav_msgs/Odometry.h
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/ChannelFloat32.h
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/PointCloud.h
+CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/angles/include/angles/angles.h
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/tf/include/tf/exceptions.h
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/tf/include/tf/tf.h
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/tf/include/tf/time_cache.h

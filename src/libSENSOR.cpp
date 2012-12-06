@@ -32,6 +32,7 @@
 #include "ros/time.h"
 #include "ros/macros.h"
 #include "ros/assert.h"
+#include "angles/angles.h"
 #include <bits/stl_iterator_base_funcs.h>
 #include <bits/functexcept.h>
 #include <bits/concept_check.h>
@@ -104,4 +105,47 @@ float SensorSonar::calcDistance(float x, float y) {
 
 }
 
+void SensorSonar::callbackOdometry(nav_msgs::Odometry msg)
+{
+    //This is the call back function to process odometry messages coming from Stage.
+    px = initialX + msg.pose.pose.position.x;
+    py = initialY + msg.pose.pose.position.y;
+    ptheta = angles::normalize_angle_positive(asin(msg.pose.pose.orientation.z) * 2);
+    ROS_INFO("x odom %f y odom %f theta %f", px, py, ptheta);
 
+}
+
+void SensorSonar::callbackBumper(ROSARIA::BumperState msg)
+{
+    //This is the call back function to process odometry messages coming from Stage.
+	frontBumper = msg.front_bumpers[0];
+	rearBumper = msg.rear_bumpers[0];
+
+}
+
+bool SensorSonar::getFrontBumper(void)
+{
+	return frontBumper;
+}
+
+bool SensorSonar::getRearBumper(void)
+{
+	return rearBumper;
+}
+
+double SensorSonar::getX(void)
+{
+	return px;
+}
+
+double SensorSonar::getY(void)
+{
+	return py;
+}
+
+double SensorSonar::getTheta(void)
+{
+	return ptheta;
+}
+
+//http://pastebin.com/fiQRVayf
