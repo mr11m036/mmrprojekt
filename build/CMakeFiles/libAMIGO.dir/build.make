@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrporjekt
+CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrporjekt/build
+CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrprojekt/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/libAMIGO.dir/depend.make
@@ -101,17 +101,17 @@ CMakeFiles/libAMIGO.dir/src/libTELEOP.o: /opt/ros/electric/stacks/common_msgs/se
 CMakeFiles/libAMIGO.dir/src/libTELEOP.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/libAMIGO.dir/src/libTELEOP.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/libAMIGO.dir/src/libTELEOP.o: /home/mario/ros_workspace/hg/ROSARIA/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/libAMIGO.dir/src/libTELEOP.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libTELEOP.o -c /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libTELEOP.o -c /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.cpp
 
 CMakeFiles/libAMIGO.dir/src/libTELEOP.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libAMIGO.dir/src/libTELEOP.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp > CMakeFiles/libAMIGO.dir/src/libTELEOP.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.cpp > CMakeFiles/libAMIGO.dir/src/libTELEOP.i
 
 CMakeFiles/libAMIGO.dir/src/libTELEOP.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libAMIGO.dir/src/libTELEOP.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp -o CMakeFiles/libAMIGO.dir/src/libTELEOP.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.cpp -o CMakeFiles/libAMIGO.dir/src/libTELEOP.s
 
 CMakeFiles/libAMIGO.dir/src/libTELEOP.o.requires:
 .PHONY : CMakeFiles/libAMIGO.dir/src/libTELEOP.o.requires
@@ -177,17 +177,17 @@ CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/common_msgs/se
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o: /home/mario/ros_workspace/hg/ROSARIA/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/libAMIGO.dir/src/libSENSOR.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libSENSOR.o -c /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libSENSOR.o -c /home/mario/ros_workspace/mmrprojekt/src/libSENSOR.cpp
 
 CMakeFiles/libAMIGO.dir/src/libSENSOR.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libAMIGO.dir/src/libSENSOR.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.cpp > CMakeFiles/libAMIGO.dir/src/libSENSOR.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrprojekt/src/libSENSOR.cpp > CMakeFiles/libAMIGO.dir/src/libSENSOR.i
 
 CMakeFiles/libAMIGO.dir/src/libSENSOR.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libAMIGO.dir/src/libSENSOR.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.cpp -o CMakeFiles/libAMIGO.dir/src/libSENSOR.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrprojekt/src/libSENSOR.cpp -o CMakeFiles/libAMIGO.dir/src/libSENSOR.s
 
 CMakeFiles/libAMIGO.dir/src/libSENSOR.o.requires:
 .PHONY : CMakeFiles/libAMIGO.dir/src/libSENSOR.o.requires
@@ -253,17 +253,17 @@ CMakeFiles/libAMIGO.dir/src/libROBOT.o: /opt/ros/electric/stacks/common_msgs/sen
 CMakeFiles/libAMIGO.dir/src/libROBOT.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/libAMIGO.dir/src/libROBOT.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/libAMIGO.dir/src/libROBOT.o: /home/mario/ros_workspace/hg/ROSARIA/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/libAMIGO.dir/src/libROBOT.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libROBOT.o -c /home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/libAMIGO.dir/src/libROBOT.o -c /home/mario/ros_workspace/mmrprojekt/src/libROBOT.cpp
 
 CMakeFiles/libAMIGO.dir/src/libROBOT.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libAMIGO.dir/src/libROBOT.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp > CMakeFiles/libAMIGO.dir/src/libROBOT.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrprojekt/src/libROBOT.cpp > CMakeFiles/libAMIGO.dir/src/libROBOT.i
 
 CMakeFiles/libAMIGO.dir/src/libROBOT.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libAMIGO.dir/src/libROBOT.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp -o CMakeFiles/libAMIGO.dir/src/libROBOT.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrprojekt/src/libROBOT.cpp -o CMakeFiles/libAMIGO.dir/src/libROBOT.s
 
 CMakeFiles/libAMIGO.dir/src/libROBOT.o.requires:
 .PHONY : CMakeFiles/libAMIGO.dir/src/libROBOT.o.requires
@@ -305,6 +305,6 @@ CMakeFiles/libAMIGO.dir/clean:
 .PHONY : CMakeFiles/libAMIGO.dir/clean
 
 CMakeFiles/libAMIGO.dir/depend:
-	cd /home/mario/ros_workspace/mmrporjekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libAMIGO.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mario/ros_workspace/mmrprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/libAMIGO.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/libAMIGO.dir/depend
 

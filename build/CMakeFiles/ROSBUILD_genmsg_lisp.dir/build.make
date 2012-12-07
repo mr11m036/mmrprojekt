@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrporjekt
+CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrporjekt/build
+CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrprojekt/build
 
 # Utility rule file for ROSBUILD_genmsg_lisp.
 
@@ -54,6 +54,6 @@ CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend:
-	cd /home/mario/ros_workspace/mmrporjekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mario/ros_workspace/mmrprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_lisp.dir/depend
 

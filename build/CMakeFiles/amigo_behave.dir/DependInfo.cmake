@@ -4,11 +4,11 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mario/ros_workspace/mmrporjekt/src/amigo_behave.cpp" "/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo_behave.dir/src/amigo_behave.o"
+  "/home/mario/ros_workspace/mmrprojekt/src/amigo_behave.cpp" "/home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/amigo_behave.dir/src/amigo_behave.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/libAMIGO.dir/DependInfo.cmake"
+  "/home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/libAMIGO.dir/DependInfo.cmake"
   )

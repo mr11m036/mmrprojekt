@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>mmrporjekt-RelWithDebInfo@mmrporjekt</name>
+	<name>mmrprojekt-RelWithDebInfo@mmrprojekt</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -112,21 +112,6 @@
 			<name>[Subprojects]</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>src/amigo_behave.cpp</name>
-			<type>1</type>
-			<location>/home/mario/ros_workspace/mmrporjekt/src/amigo_behave.cpp</location>
-		</link>
-		<link>
-			<name>src/libROBOT.cpp</name>
-			<type>1</type>
-			<location>/home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp</location>
-		</link>
-		<link>
-			<name>src/libROBOT.h</name>
-			<type>1</type>
-			<location>/home/mario/ros_workspace/mmrporjekt/src/libROBOT.h</location>
 		</link>
 	</linkedResources>
 </projectDescription>

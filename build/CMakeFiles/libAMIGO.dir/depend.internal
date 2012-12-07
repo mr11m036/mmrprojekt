@@ -141,8 +141,8 @@ CMakeFiles/libAMIGO.dir/src/libROBOT.o
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaTypedefs.h
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaUtil.h
  /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/BumperState.h
- /home/mario/ros_workspace/mmrporjekt/src/libROBOT.cpp
- /home/mario/ros_workspace/mmrporjekt/src/libROBOT.h
+ /home/mario/ros_workspace/mmrprojekt/src/libROBOT.cpp
+ /home/mario/ros_workspace/mmrprojekt/src/libROBOT.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMatrix3x3.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMinMax.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btQuadWord.h
@@ -375,8 +375,8 @@ CMakeFiles/libAMIGO.dir/src/libSENSOR.o
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaTypedefs.h
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaUtil.h
  /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/BumperState.h
- /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.cpp
- /home/mario/ros_workspace/mmrporjekt/src/libSENSOR.h
+ /home/mario/ros_workspace/mmrprojekt/src/libSENSOR.cpp
+ /home/mario/ros_workspace/mmrprojekt/src/libSENSOR.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMatrix3x3.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMinMax.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btQuadWord.h
@@ -610,8 +610,8 @@ CMakeFiles/libAMIGO.dir/src/libTELEOP.o
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaTypedefs.h
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaUtil.h
  /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/BumperState.h
- /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.cpp
- /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
+ /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.cpp
+ /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMatrix3x3.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMinMax.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btQuadWord.h

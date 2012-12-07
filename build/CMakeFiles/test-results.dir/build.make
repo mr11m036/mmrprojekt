@@ -32,15 +32,15 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrporjekt
+CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrporjekt/build
+CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrprojekt/build
 
 # Utility rule file for test-results.
 
 CMakeFiles/test-results:
-	/opt/ros/electric/ros/tools/rosunit/scripts/summarize_results.py --nodeps mmrporjekt
+	/opt/ros/electric/ros/tools/rosunit/scripts/summarize_results.py --nodeps mmrprojekt
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
@@ -55,6 +55,6 @@ CMakeFiles/test-results.dir/clean:
 .PHONY : CMakeFiles/test-results.dir/clean
 
 CMakeFiles/test-results.dir/depend:
-	cd /home/mario/ros_workspace/mmrporjekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mario/ros_workspace/mmrprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/test-results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-results.dir/depend
 

@@ -8,11 +8,7 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/mmrprojekt</url>
-  <depend package="std_msgs"/>
-  <depend package="rospy"/>
-  <depend package="roscpp"/>
-  <depend package="ROSARIA"/>
-  <depend package="angles"/>
+
 </package>
 
 

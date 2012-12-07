@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrporjekt
+CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrporjekt/build
+CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrprojekt/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/amigo_behave.dir/depend.make
@@ -101,17 +101,17 @@ CMakeFiles/amigo_behave.dir/src/amigo_behave.o: /opt/ros/electric/stacks/common_
 CMakeFiles/amigo_behave.dir/src/amigo_behave.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/amigo_behave.dir/src/amigo_behave.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/amigo_behave.dir/src/amigo_behave.o: /home/mario/ros_workspace/hg/ROSARIA/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/amigo_behave.dir/src/amigo_behave.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/amigo_behave.dir/src/amigo_behave.o -c /home/mario/ros_workspace/mmrporjekt/src/amigo_behave.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/amigo_behave.dir/src/amigo_behave.o -c /home/mario/ros_workspace/mmrprojekt/src/amigo_behave.cpp
 
 CMakeFiles/amigo_behave.dir/src/amigo_behave.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/amigo_behave.dir/src/amigo_behave.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrporjekt/src/amigo_behave.cpp > CMakeFiles/amigo_behave.dir/src/amigo_behave.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mario/ros_workspace/mmrprojekt/src/amigo_behave.cpp > CMakeFiles/amigo_behave.dir/src/amigo_behave.i
 
 CMakeFiles/amigo_behave.dir/src/amigo_behave.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/amigo_behave.dir/src/amigo_behave.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrporjekt/src/amigo_behave.cpp -o CMakeFiles/amigo_behave.dir/src/amigo_behave.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -fPIC -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mario/ros_workspace/mmrprojekt/src/amigo_behave.cpp -o CMakeFiles/amigo_behave.dir/src/amigo_behave.s
 
 CMakeFiles/amigo_behave.dir/src/amigo_behave.o.requires:
 .PHONY : CMakeFiles/amigo_behave.dir/src/amigo_behave.o.requires
@@ -148,6 +148,6 @@ CMakeFiles/amigo_behave.dir/clean:
 .PHONY : CMakeFiles/amigo_behave.dir/clean
 
 CMakeFiles/amigo_behave.dir/depend:
-	cd /home/mario/ros_workspace/mmrporjekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build /home/mario/ros_workspace/mmrporjekt/build/CMakeFiles/amigo_behave.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mario/ros_workspace/mmrprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build /home/mario/ros_workspace/mmrprojekt/build/CMakeFiles/amigo_behave.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/amigo_behave.dir/depend
 

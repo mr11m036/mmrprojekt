@@ -1,13 +1,13 @@
 <package>
-  <description brief="mmrprojekt">
+  <description brief="mmrporjekt">
 
-     mmrprojekt
+     mmrporjekt
 
   </description>
   <author>Mario</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/mmrprojekt</url>
+  <url>http://ros.org/wiki/mmrporjekt</url>
   <depend package="std_msgs"/>
   <depend package="rospy"/>
   <depend package="roscpp"/>

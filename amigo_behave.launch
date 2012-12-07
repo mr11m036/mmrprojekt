@@ -1,0 +1,8 @@
+<launch>
+	<!-- start RosAria node -->
+	<node pkg="mmrprojekt" type="amigo_behave" output="log" name="RosAria" cwd="node" args="_port:=localhost:8101">
+	</node>
+	<!-- start Sensor node -->
+	<node pkg="mmrprojekt" type="amigo_sensors" output="screen" name="amigo_sensors_sonar" cwd="node">
+	</node>
+</launch>

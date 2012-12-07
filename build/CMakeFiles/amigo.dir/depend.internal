@@ -141,8 +141,8 @@ CMakeFiles/amigo.dir/src/amigo.o
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaTypedefs.h
  /home/mario/ros_workspace/hg/Aria/Aria/include/ariaUtil.h
  /home/mario/ros_workspace/hg/ROSARIA/msg_gen/cpp/include/ROSARIA/BumperState.h
- /home/mario/ros_workspace/mmrporjekt/src/amigo.cpp
- /home/mario/ros_workspace/mmrporjekt/src/libTELEOP.h
+ /home/mario/ros_workspace/mmrprojekt/src/amigo.cpp
+ /home/mario/ros_workspace/mmrprojekt/src/libTELEOP.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMatrix3x3.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btMinMax.h
  /opt/ros/electric/stacks/bullet/include/LinearMath/btQuadWord.h
