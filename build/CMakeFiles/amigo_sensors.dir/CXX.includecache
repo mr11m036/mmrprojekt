@@ -1619,6 +1619,8 @@ Aria.h
 -
 sensor_msgs/PointCloud.h
 -
+string
+-
 std_msgs/String.h
 /home/mario/ros_workspace/mmrprojekt/src/std_msgs/String.h
 ros/ros.h

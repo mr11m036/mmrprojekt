@@ -16,12 +16,16 @@
 
 #ifndef _INCL_SENSOR
 #define _INCL_SENSOR
+
+#define logPath "../log/Odometry.txt"
 /*--- #includes der Form <...> ---------------------------------------*/
 
 #include <stdio.h>
 #include <math.h>
 #include <Aria.h>
 #include <sensor_msgs/PointCloud.h>     //for sonar data
+#include <string>
+
 
 /*--- #includes der Form "..." ---------------------------------------*/
 
@@ -45,6 +49,10 @@ class SensorSonar
   ros::Subscriber sub;
   ros::Subscriber subOdometry;
   ros::Subscriber subBumper;
+  ros::Time		  nowTimeOdometry; // Timestamp der letzten Odomertienachricht.
+  ros::Time		  lastTimeOdometry; // Timestamp der letzten Odomertienachricht.
+  ros::Time		  passedTimeOdometry;
+  ros::Time		  initTimeOdometry;
 
   uint32_t queue_size;
 
@@ -98,6 +106,10 @@ class SensorSonar
 	ptheta = 0;
 	frontBumper = false,
 	rearBumper = false;
+	passedTimeOdometry = ros::Time::now();
+	nowTimeOdometry = ros::Time::now();
+	initTimeOdometry = ros::Time::now();
+
 
     sub = nh_.subscribe <sensor_msgs::PointCloud>  ("/RosAria/sonar",1, &SensorSonar::callback, this);
     subOdometry = nh_.subscribe<nav_msgs::Odometry>("/RosAria/pose",1000,&SensorSonar::callbackOdometry,this);
@@ -114,6 +126,8 @@ class SensorSonar
   void callbackOdometry(nav_msgs::Odometry msg);
 
   void callbackBumper(ROSARIA::BumperState msg);
+
+  int logOdometry(std::string errorDesc, bool bReset);
 };
 
 #endif //_INCL_SENSOR

@@ -1,6 +1,13 @@
-Destination X:500
-Destination Y:500
+Punkte:4
 Maximum Speed:200
 Proximity:20
 Rotational Speed:10
 Accuracy:1
+X:500
+Y:0
+X:500
+Y:500
+X:0
+Y:500
+X:0
+Y:0

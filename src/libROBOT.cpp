@@ -59,14 +59,16 @@ RosAriaNode::RosAriaNode(ros::NodeHandle nh) :
   cmdvel_sub = n.subscribe( "cmd_vel", 1, (boost::function < void(const geometry_msgs::TwistConstPtr&)>) boost::bind( &RosAriaNode::cmdvel_cb, this, _1 ));
 
   veltime = ros::Time::now();
+
+  FlagArPoseList = false;
 }
 
 RosAriaNode::~RosAriaNode()
 {
   //disable motors and sonar.
   robot->disableMotors();
-  //robot->disableSonar();
-  robot->enableSonar();
+  robot->disableSonar();
+  //robot->enableSonar();
 
   robot->stopRunning();
   robot->waitForRunExit();
@@ -121,6 +123,8 @@ int RosAriaNode::Setup()
   // Initialize bumpers with robot number of bumpers
   bumpers.front_bumpers.resize(robot->getNumFrontBumpers());
   bumpers.rear_bumpers.resize(robot->getNumRearBumpers());
+
+  FlagArPoseList = false;
 
   return 0;
 }
@@ -273,6 +277,18 @@ int RosAriaNode::beLib(int id)//int id is the Behavior ID of the Behavior that i
 		return bGotoXY();
 		break;
 
+	case 3:
+		//Demo Behavior with ID 2: Simple goto behavior
+		 ROS_INFO("bGotoSquare");
+		 return bGotoCircle();
+		break;
+
+	case 4:
+		//Demo Behavior with ID 2: Simple goto behavior
+		 ROS_INFO("bGotoXYPath");
+		 return bGotoXYPath();
+		break;
+
 	}
 	return 0;
 }
@@ -310,6 +326,10 @@ double RosAriaNode::readParam(int iBeID, int iPaID)
 
 	inFile.close();//File is closed
 	return atof(sParam.c_str());//Remaining String is converted typecasted to double and returned
+
+
+
+
 }
 
 int RosAriaNode::readBehav(int iBeID, int iPaID)//Function is similar to readParam with some small exceptions
@@ -445,7 +465,128 @@ int RosAriaNode::bSimpleAvoid()
 		return 0;
 }
 
+int RosAriaNode::bGotoCircle()
+{
+	double dMaxVel = readParam(3,2);//Reads Parameters from textifle
+	double dRadius	= readParam(3,0);
+	double dDirection	= readParam(3,1); //-1 clockwise +1 counter clockwise
 
+	ArPose current;//Contains the current pose of the robot
+
+	if (dDirection == -1)
+	{
+		dVelLeft = (dRadius + (double)RADSTAND/2)*dMaxVel;
+		dVelRight = (dRadius - (double)RADSTAND/2)*dMaxVel;
+		  ROS_INFO("dVelLeft Rot:%f", dVelLeft);
+		  ROS_INFO("dVelRight Rot:%f", dVelRight);
+	}
+	else if (dDirection == 1)
+	{
+		dVelLeft = (dRadius - (double)RADSTAND/2)*dMaxVel;
+		dVelRight = (dRadius + (double)RADSTAND/2)*dMaxVel;
+	}
+	else
+	{
+		return 1;
+	}
+
+
+
+	return 0;
+}
+
+int RosAriaNode::bGotoXYPath()
+{
+	double dMaxVel = readParam(4,1);//Reads Parameters from textifle
+	double dProximity = readParam(4,2);
+	double dRotVel = readParam(4,3);
+	double dAccuracy = readParam(4,4);
+	int    iPoints =readParam(4,0);
+
+	ArPose target;//Instance of ArPose Object, contains the target coordinates
+	ArPose current;//Contains the current pose of the robot
+
+		if (FlagArPoseList == false)
+		{
+			// Get poses
+			FlagArPoseList = true;
+
+			for (int loop = 0; loop < iPoints; loop++)
+			{
+				target.setX(readParam(4,2*loop+5));
+				target.setY(readParam(4,2*loop+6));
+				targetList.push_back(target);
+			}
+			targetListIT = targetList.begin();
+			/*
+			ROS_INFO("Setting Path");
+			targetListIT = targetList.begin();
+			target.setX(300);
+			target.setY(0);
+			targetList.push_back(target);
+			target.setX(300);
+			target.setY(300);
+			targetList.push_back(target);
+			target.setX(0);
+			target.setY(300);
+			targetList.push_back(target);
+			target.setX(0);
+			target.setY(0);
+			targetList.push_back(target);
+			targetListIT = targetList.begin();
+			*/
+			return 1;
+		}
+		else
+		{
+
+			if ( targetListIT != targetList.end() && !targetList.empty())
+			{
+
+				target.setX(targetListIT->getX());
+				target.setY(targetListIT->getY());
+				ROS_INFO("X: %f",targetListIT->getX() );
+				ROS_INFO("Y: %f",targetListIT->getY() );
+
+
+			current = robot->getPose();
+
+			if(current.findDistanceTo(target) > dProximity)//Behavior is activated if the robot is not already within a certian distance to the target
+			{
+				//Angle to target is calculated and compared to the Pose of the robot
+				//the robot is then set to rotate if the angles are not similar
+				if(current.findAngleTo(target) > current.getTh() + dAccuracy)
+				{
+					dVelRight -= dRotVel;
+					dVelLeft += dRotVel;
+					//  ROS_INFO("bGotoXY dVelLeftOverloaded %f",dVelLeft);
+				}
+				else if(current.findAngleTo(target) < current.getTh() - dAccuracy)
+				{
+					dVelRight += dRotVel;
+					dVelLeft -= dRotVel;
+				}
+				//if the angles are similar, the robot drives forward in order to approach his destionation
+				else
+				{
+					dVelRight += dMaxVel;
+					dVelLeft += dMaxVel;
+				}
+				return 1;
+			}
+
+			else
+				{
+					++targetListIT;
+					return 0;
+				}
+			}
+			else
+			{
+				return 0;
+			}
+		}
+}
 
 int RosAriaNode::bGotoXY()
 {

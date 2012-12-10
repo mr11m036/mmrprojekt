@@ -1,0 +1,6 @@
+Radius:5
+Richtung:-1
+Maximum Speed:50
+Proximity:1
+Rotational Speed:100
+Accuracy:1

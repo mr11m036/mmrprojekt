@@ -26,13 +26,21 @@
 #include "stdlib.h"
 #include "math.h"
 #include <sstream>
+#include <vector>
+#include <list>
 
 #ifndef LIBROBOT_H_
 #define LIBROBOT_H_
 #define diaPath "../log/Diagnostics.txt"
 #define errPath "../log/Errors.txt"
+#define RADSTAND	1
+
 
 using namespace std;
+
+typedef list <ArPose> ArPoseList;
+typedef ArPoseList::iterator ArPoseListIterator;
+
 
 
 class ActionPause : public ArAction
@@ -87,12 +95,16 @@ class RosAriaNode
 	int logError(string errorDesc, bool bReset);
 	int logDia(string diaDesc, bool bReset);
 
+	ArPoseList targetList;
+	ArPoseListIterator targetListIT;
+	bool FlagArPoseList;
 
     RosAriaNode(ros::NodeHandle n);
     virtual ~RosAriaNode();
 
   public:
     int Setup();
+
     void cmdvel_cb( const geometry_msgs::TwistConstPtr &);
     void spin();
     void publish();
@@ -100,6 +112,9 @@ class RosAriaNode
 
 	int bSimpleAvoid();
 	int bGotoXY();
+	int bGotoXYPath();
+	int bGotoCircle();
+
 	ArRobot *robot;
   protected:
     ros::NodeHandle n;
@@ -107,7 +122,6 @@ class RosAriaNode
     ros::Publisher bumpers_pub;
     ros::Publisher sonar_pub;
     ros::Subscriber cmdvel_sub;
-
     ros::Time veltime;
 
     std::string serial_port;

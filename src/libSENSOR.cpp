@@ -23,6 +23,9 @@
 #include <ostream>
 #include <float.h>
 #include <stdexcept>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 /*--- #includes der Form "..." ---------------------------------------*/
 
@@ -107,10 +110,39 @@ float SensorSonar::calcDistance(float x, float y) {
 
 void SensorSonar::callbackOdometry(nav_msgs::Odometry msg)
 {
+	string strTime;
+	string strX;
+	string strY;
+	string strTheta;
+	ostringstream convert;
+	ostringstream convert1;
+	ostringstream convert2;
+	ostringstream convert3;
+	ros::Duration deltaT;
+
     //This is the call back function to process odometry messages coming from Stage.
     px = initialX + msg.pose.pose.position.x;
     py = initialY + msg.pose.pose.position.y;
     ptheta = angles::normalize_angle_positive(asin(msg.pose.pose.orientation.z) * 2);
+    nowTimeOdometry = msg.header.stamp;
+
+    deltaT = nowTimeOdometry - initTimeOdometry;
+    convert << deltaT.toSec(); //.toSec()/60;
+    strTime = convert.str();
+
+   // passedTimeOdometry = passedTimeOdometry + deltaT;
+   // lastTimeOdometry = nowTimeOdometry;
+
+    convert1 << px;
+    strX = convert1.str();
+
+    convert2 << py;
+    strY = convert2.str();
+
+    convert3 << ptheta;
+    strTheta = convert3.str();
+
+    (void)logOdometry(strX +" "+ strY + " " + strTheta+  " " + strTime + "\n",false);
     ROS_INFO("x odom %f y odom %f theta %f", px, py, ptheta);
 
 }
@@ -146,6 +178,21 @@ double SensorSonar::getY(void)
 double SensorSonar::getTheta(void)
 {
 	return ptheta;
+}
+
+int SensorSonar::logOdometry(std::string errorDesc, bool bReset)//Writes error description to Errors.txt, errpath is the path to said file
+{
+	fstream errFile;
+	if(!bReset)
+		errFile.open(logPath, ios::out|ios::app);//If bReset is not set, the data is appended to the end of the file
+	else
+		errFile.open(logPath, ios::out);//If bReset is set, the file is cleared before new data is written to it
+	if(errFile.is_open())
+	{
+		errFile << errorDesc;//Error description is written to the file
+	}
+	errFile.close();//File is closed
+	return 0;
 }
 
 //http://pastebin.com/fiQRVayf
