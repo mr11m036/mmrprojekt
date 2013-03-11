@@ -24,7 +24,7 @@
 #include <sstream>
 #include <string>
 #include "stdlib.h"
-#include "math.h"
+#include <math.h>
 #include <sstream>
 #include <vector>
 #include <list>
@@ -35,6 +35,7 @@
 #define errPath "../log/Errors.txt"
 #define RADSTAND	1
 
+extern float ranf();
 
 using namespace std;
 
@@ -48,6 +49,7 @@ class ActionPause : public ArAction
 public:
   // constructor, sets myMaxSpeed and myStopDistance
   ActionPause(double time);
+  float box_muller(float m, float s);
   // destructor. does not need to do anything
   virtual ~ActionPause(void) {};
   // called by the action resolver to obtain this action's requested behavior
@@ -69,6 +71,8 @@ ArActionDesired *ActionPause::fire(ArActionDesired currentDesired)
   ros::Duration(pauseTime).sleep();
   return &myDesired;
 }
+
+
 
 
 class RosAriaNode
@@ -94,6 +98,8 @@ class RosAriaNode
 	int getBeQueueLenght();
 	int logError(string errorDesc, bool bReset);
 	int logDia(string diaDesc, bool bReset);
+	float box_muller(float m, float s);
+
 
 	ArPoseList targetList;
 	ArPoseListIterator targetListIT;
@@ -109,6 +115,7 @@ class RosAriaNode
     void spin();
     void publish();
     void sonarConnectCb();
+    float ranf();
 
 	int bSimpleAvoid();
 	int bGotoXY();
@@ -125,6 +132,8 @@ class RosAriaNode
     ros::Time veltime;
 
     std::string serial_port;
+
+    char isRinit;
 
     ArSimpleConnector *conn;
 

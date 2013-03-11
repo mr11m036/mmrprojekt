@@ -4,7 +4,7 @@
 #=============================================================================
 # Special targets provided by cmake.
 
-# Disable implicit rules so canoncical targets will work.
+# Disable implicit rules so canonical targets will work.
 .SUFFIXES:
 
 # Remove some rules from gmake that .SUFFIXES does not remove.
@@ -38,6 +38,9 @@ CMAKE_SOURCE_DIR = /home/mario/ros_workspace/mmrprojekt
 CMAKE_BINARY_DIR = /home/mario/ros_workspace/mmrprojekt/build
 
 # Utility rule file for test-results-run.
+
+# Include the progress variables for this target.
+include CMakeFiles/test-results-run.dir/progress.make
 
 CMakeFiles/test-results-run:
 

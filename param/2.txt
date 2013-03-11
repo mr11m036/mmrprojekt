@@ -1,5 +1,5 @@
-Destination X:500
-Destination Y:500
+Destination X:3000
+Destination Y:-2000
 Maximum Speed:200
 Proximity:20
 Rotational Speed:10

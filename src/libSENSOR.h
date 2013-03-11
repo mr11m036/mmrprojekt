@@ -86,6 +86,7 @@ class SensorSonar
   public:
 
   float  distCurrent[8];
+  float  distMatrix[2][8];
 
   float getDistance (int sensornr);
   double getX(void);

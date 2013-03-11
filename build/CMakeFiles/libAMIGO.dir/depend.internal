@@ -168,6 +168,7 @@ CMakeFiles/libAMIGO.dir/src/libROBOT.o
  /opt/ros/electric/stacks/common_msgs/nav_msgs/msg_gen/cpp/include/nav_msgs/Odometry.h
  /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/ChannelFloat32.h
  /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/PointCloud.h
+ /opt/ros/electric/stacks/geometry/angles/include/angles/angles.h
  /opt/ros/electric/stacks/geometry/tf/include/tf/exceptions.h
  /opt/ros/electric/stacks/geometry/tf/include/tf/tf.h
  /opt/ros/electric/stacks/geometry/tf/include/tf/time_cache.h

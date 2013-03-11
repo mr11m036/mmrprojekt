@@ -31,24 +31,37 @@ node->iBeQueueLength = node->getBeQueueLenght();
 
 	int* iBeQueID = NULL;//Behavior Queue is created dynamically
 	int* iBeQuePr = NULL;//iBeQue[behaviorID][behaviorPriority]
+	//double* iBeQueMe = NULL;//Mean
+	//double* iBeQueSi = NULL;//Sigma
 
 	iBeQueID = new int[node->iBeQueueLength];
 	iBeQuePr = new int[node->iBeQueueLength];
+	//iBeQueMe = new double[node->iBeQueueLength];
+	//iBeQueSi = new double[node->iBeQueueLength];
 
 	int iBeBuf[2];  //Buffer for the sorting algorithm
-	iBeBuf[0]=0;iBeBuf[1]=0;
+	//double dBeBuf[2];  //Buffer for the sorting algorithm
+
+	iBeBuf[0]=0;
+	iBeBuf[1]=0;
+	//dBeBuf[0]=0.0;
+	//dBeBuf[1]=0.0;
 
 	for(int i = 0;i < node->iBeQueueLength;i++)//All fields of the behavior are initialized with 0
 	{
-		iBeQueID[i]=0;
-		iBeQuePr[i]=0;
+		iBeQueID[i]	=	0;
+		iBeQuePr[i]	=	0;
+		//iBeQueMe[i]	=	0.0;
+		//iBeQueSi[i]	= 	0.0;
 	}
 
 	//Reading Behavior Queue
 	for(int i=0;i<node->iBeQueueLength;i++)
 	{
-		iBeQueID[i]=node->readBehav(i,0);
-		iBeQuePr[i]=node->readBehav(i,1);
+		iBeQueID[i]	=	(int)node->readBehav(i,0);
+		iBeQuePr[i]	=	(int)node->readBehav(i,1);
+		//iBeQueMe[i]	=	node->readBehav(i,2);
+		//iBeQueSi[i]	= 	node->readBehav(i,3);
 	}
 
 	//START OF SORTING
@@ -66,10 +79,16 @@ node->iBeQueueLength = node->getBeQueueLenght();
 			{
 				iBeBuf[0]=iBeQueID[i];
 				iBeBuf[1]=iBeQuePr[i];
+			//	dBeBuf[0]=iBeQueMe[i];
+			//	dBeBuf[1]=iBeQueSi[i];
 				iBeQueID[i]=iBeQueID[i+1];
 				iBeQuePr[i]=iBeQuePr[i+1];
+			//	iBeQueMe[i]=iBeQueMe[i+1];
+			//	iBeQueSi[i]=iBeQueSi[i+1];
 				iBeQueID[i+1]=iBeBuf[0];
 				iBeQuePr[i+1]=iBeBuf[1];
+			//	iBeQueMe[i+1]=dBeBuf[0];
+			//	iBeQueSi[i+1]=dBeBuf[1];
 				bSwitched = 1;
 			}
 		}
@@ -85,8 +104,9 @@ node->iBeQueueLength = node->getBeQueueLenght();
 	for(;;)
 	{
 		//node->spin();
-		 ros::spinOnce();
-		 pub_rate.sleep();
+		ros::spinOnce();
+		pub_rate.sleep();
+
 		node->dVelLeft = 0;//Control variable for the left motor
 		node->dVelRight = 0;//Control variable for the right motor
 		node->iBeCount = 0;//Counter for the number of behaviors triggered
@@ -141,6 +161,8 @@ node->iBeQueueLength = node->getBeQueueLenght();
   delete node;
   delete[] iBeQueID;
   delete[] iBeQuePr;
+  // delete[] iBeQueMe;
+  // delete[] iBeQueSi;
 	Aria::shutdown();
   printf( "\nQuitting... \n" );
   return 0;

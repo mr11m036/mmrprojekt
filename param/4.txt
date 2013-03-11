@@ -1,8 +1,8 @@
 Punkte:4
-Maximum Speed:200
+Maximum Speed:100
 Proximity:20
 Rotational Speed:10
-Accuracy:1
+Accuracy:5
 X:500
 Y:0
 X:500

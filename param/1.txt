@@ -4,3 +4,5 @@ Frontal Velocity Modifier:0.5
 Side Trigger Distance:200
 Side Velocity Modifier:0.2
 Total Activity Trigger Distance:400
+Mean:1
+Sigma:0.5

@@ -6,7 +6,8 @@
  */
 
 #include "libROBOT.h"
-
+#include "angles/angles.h"
+#include <string.h>
 
 
 void RosAriaNode::sonarConnectCb()
@@ -77,7 +78,9 @@ RosAriaNode::~RosAriaNode()
 
 int RosAriaNode::Setup()
 {
-  ArArgumentBuilder *args;
+	isRinit = 0;
+
+	ArArgumentBuilder *args;
   args = new ArArgumentBuilder();
 
   size_t colon_pos = serial_port.find(":");
@@ -268,18 +271,19 @@ int RosAriaNode::beLib(int id)//int id is the Behavior ID of the Behavior that i
 
 	case 1:
 		//Demo Behavior with ID 1: Simple avoidance behavior
-		  ROS_INFO("bSimpleAvoid");
+		  ROS_ERROR("bSimpleAvoid");
 		return bSimpleAvoid();
 		break;
 
 	case 2:
 		//Demo Behavior with ID 2: Simple goto behavior
+		ROS_ERROR("bGotoXY");
 		return bGotoXY();
 		break;
 
 	case 3:
 		//Demo Behavior with ID 2: Simple goto behavior
-		 ROS_INFO("bGotoSquare");
+		 ROS_ERROR("bGotoSquare");
 		 return bGotoCircle();
 		break;
 
@@ -331,6 +335,46 @@ double RosAriaNode::readParam(int iBeID, int iPaID)
 
 
 }
+
+/*
+double RosAriaNode::readBehav(int iBeID, int iPaID)//Function is similar to readParam with some small exceptions
+{
+	string sParam;
+	string sResult;
+	string sPath = "../param/BehaviorQueue.txt";//Path must be correct
+	char 	* sTemp;
+	char	* pch;
+	int 	iCount;
+
+	ifstream inFile(sPath.c_str());
+
+
+	for(int i=0;i <= iBeID;i++)
+	{
+		getline(inFile,sParam);
+	}
+
+	sTemp = strdup(sParam.c_str());
+
+	pch = strtok (sTemp,":");
+
+	iCount = 0;
+
+	while (pch != NULL)
+	{
+		sResult = std::string(pch);
+		if (iCount == iPaID)
+		{
+			break;
+		}
+		pch = strtok (NULL,":");
+		++iCount;
+	}
+
+	inFile.close();
+	return atof(sResult.c_str());
+}
+*/
 
 int RosAriaNode::readBehav(int iBeID, int iPaID)//Function is similar to readParam with some small exceptions
 {
@@ -413,7 +457,47 @@ int RosAriaNode::logDia(string diaDesc, bool bReset)//Similar to logError, but w
 	return 0;
 }
 
+
+float RosAriaNode::ranf() /* ranf() is uniform in 0..1 */
+{
+	if(isRinit != 1){
+		srand( (unsigned)time( NULL ) );
+		isRinit = 1;
+	}
+	return ((float)rand())/ (float)RAND_MAX;
+}
+
+float RosAriaNode::box_muller(float m, float s)	/* normal random variate generator */
+{				        /* mean m, standard deviation s */
+	float x1, x2, w, y1;
+	static float y2;
+	static int use_last = 0;
+
+	if (use_last)		        /* use value from previous call */
+	{
+		y1 = y2;
+		use_last = 0;
+	}
+	else
+	{
+		do {
+			x1 = 2.0 * ranf() - 1.0;
+			x2 = 2.0 * ranf() - 1.0;
+			w = x1 * x1 + x2 * x2;
+		} while ( w >= 1.0 );
+
+		w = sqrt( (-2.0 * log( w ) ) / w );
+		y1 = x1 * w;
+		y2 = x2 * w;
+		use_last = 1;
+	}
+
+	return( m + y1 * s );
+}
+
+
 //END OF MISC FUNCTIONS
+
 
 
 //BEHAVIOR MODULES
@@ -427,9 +511,15 @@ int RosAriaNode::bSimpleAvoid()
 	double dSideTrigDist = readParam(1,3);
 	double dSideVelMod = readParam(1,4);
 	double dActiveDist = readParam(1,5);
-	  ROS_INFO("dFrontTrigDist:%f", dFrontTrigDist);
+	double dMean	= readParam(1,6);
+	double dSigma 	= readParam(1,7);
+
+	ROS_INFO("dFrontTrigDist:%f", dFrontTrigDist);
+
 	int iLMod = 1;//Modifiers used to implement rotation
 	int iRMod = 1;
+
+	float dWeight = box_muller(dMean, dSigma);
 
 	double dRealVel = dMaxVel;//Default speed is set to the maximum allowed velocity taken form the config file
 
@@ -444,21 +534,24 @@ int RosAriaNode::bSimpleAvoid()
 
 		if((robot->getSonarRange(0) < dSideTrigDist) || (robot->getSonarRange(1) < dSideTrigDist))//Checks if the object is to the left
 		{
-			iLMod = -1;//Sets the modifier for the left wheel to -1 so that the robot will steer to the right
+			//iLMod = -1;//Sets the modifier for the left wheel to -1 so that the robot will steer to the right
+			iRMod = -1;
 			dRealVel *= dSideVelMod;//Velocity is modified
 			 // ROS_INFO("Decreasing to :%f", dRealVel);
 		}
 
 		if((robot->getSonarRange(4) < dSideTrigDist) || (robot->getSonarRange(5) < dSideTrigDist))
 		{
-			iRMod = -1;
+			iLMod = -1;
+			//iRMod = -1;
 			dRealVel *= dSideVelMod;
 
 		}
-		dVelLeft += iLMod * dRealVel;//Calculated motor data is passed on to the global velocity control variables
-		dVelRight += iRMod * dRealVel;
-		  ROS_INFO("dVelLeft:%f", dVelLeft);
-		  ROS_INFO("dVelRight:%f", dVelRight);
+		dVelLeft += iLMod * dRealVel * dWeight;//Calculated motor data is passed on to the global velocity control variables
+		dVelRight += iRMod * dRealVel * dWeight;
+		ROS_INFO("dVelLeft:%f", dVelLeft);
+		ROS_INFO("dVelRight:%f", dVelRight);
+		ROS_INFO("dWeight:%f", dWeight);
 		return 1;
 	}
 	else
@@ -502,6 +595,8 @@ int RosAriaNode::bGotoXYPath()
 	double dRotVel = readParam(4,3);
 	double dAccuracy = readParam(4,4);
 	int    iPoints =readParam(4,0);
+	//double angleNorm = 0;
+	//double angleNormTarget = 0;
 
 	ArPose target;//Instance of ArPose Object, contains the target coordinates
 	ArPose current;//Contains the current pose of the robot
@@ -518,23 +613,7 @@ int RosAriaNode::bGotoXYPath()
 				targetList.push_back(target);
 			}
 			targetListIT = targetList.begin();
-			/*
-			ROS_INFO("Setting Path");
-			targetListIT = targetList.begin();
-			target.setX(300);
-			target.setY(0);
-			targetList.push_back(target);
-			target.setX(300);
-			target.setY(300);
-			targetList.push_back(target);
-			target.setX(0);
-			target.setY(300);
-			targetList.push_back(target);
-			target.setX(0);
-			target.setY(0);
-			targetList.push_back(target);
-			targetListIT = targetList.begin();
-			*/
+
 			return 1;
 		}
 		else
@@ -545,33 +624,44 @@ int RosAriaNode::bGotoXYPath()
 
 				target.setX(targetListIT->getX());
 				target.setY(targetListIT->getY());
+				target.setThRad(0);
 				ROS_INFO("X: %f",targetListIT->getX() );
 				ROS_INFO("Y: %f",targetListIT->getY() );
 
 
 			current = robot->getPose();
 
+			//angleNorm = ArMath::radToDeg (angles::normalize_angle_positive((current.getThRad())) );
+			//angleNormTarget = ArMath::radToDeg (angles::normalize_angle_positive(ArMath::degToRad(current.findAngleTo(target) )) );
+
+			ROS_INFO("Distance to target:%f", current.findDistanceTo(target) );
+			ROS_INFO("Angle to target:%f", current.findAngleTo(target)  );
+			ROS_INFO("Angle:%f", 	   current.getTh() );
+			ROS_INFO("Angle Difference %f",current.findAngleTo(target) -current.getTh() );
+
 			if(current.findDistanceTo(target) > dProximity)//Behavior is activated if the robot is not already within a certian distance to the target
 			{
 				//Angle to target is calculated and compared to the Pose of the robot
 				//the robot is then set to rotate if the angles are not similar
+
+
 				if(current.findAngleTo(target) > current.getTh() + dAccuracy)
-				{
-					dVelRight -= dRotVel;
-					dVelLeft += dRotVel;
-					//  ROS_INFO("bGotoXY dVelLeftOverloaded %f",dVelLeft);
-				}
-				else if(current.findAngleTo(target) < current.getTh() - dAccuracy)
-				{
-					dVelRight += dRotVel;
-					dVelLeft -= dRotVel;
-				}
-				//if the angles are similar, the robot drives forward in order to approach his destionation
-				else
-				{
-					dVelRight += dMaxVel;
-					dVelLeft += dMaxVel;
-				}
+					{
+						dVelRight -= dRotVel;
+						dVelLeft += dRotVel;
+					}
+					else if(current.findAngleTo(target) < current.getTh() - dAccuracy)
+					{
+						dVelRight += dRotVel;
+						dVelLeft -= dRotVel;
+					}
+					//if the angles are similar, the robot drives forward in order to approach his destionation
+					else
+					{
+						dVelRight += dMaxVel;
+						dVelLeft += dMaxVel;
+					}
+
 				return 1;
 			}
 
@@ -594,6 +684,8 @@ int RosAriaNode::bGotoXY()
 	double dProximity = readParam(2,3);
 	double dRotVel = readParam(2,4);
 	double dAccuracy = readParam(2,5);
+	double dMean	= readParam(2,6);
+	double dSigma 	= readParam(2,7);
 
 	ArPose target;//Instance of ArPose Object, contains the target coordinates
 	ArPose current;//Contains the current pose of the robot
@@ -601,27 +693,30 @@ int RosAriaNode::bGotoXY()
 	target.setY(readParam(2,1));
 	current = robot->getPose();
 
+	float dWeight = box_muller(dMean, dSigma);
+
 	if(current.findDistanceTo(target) > dProximity)//Behavior is activated if the robot is not already within a certian distance to the target
 	{
 		//Angle to target is calculated and compared to the Pose of the robot
 		//the robot is then set to rotate if the angles are not similar
 		if(current.findAngleTo(target) > current.getTh() + dAccuracy)
 		{
-			dVelRight -= dRotVel;
-			dVelLeft += dRotVel;
+			dVelRight -= dRotVel*dWeight;
+			dVelLeft += dRotVel*dWeight;
 		}
 		else if(current.findAngleTo(target) < current.getTh() - dAccuracy)
 		{
-			dVelRight += dRotVel;
-			dVelLeft -= dRotVel;
+			dVelRight += dRotVel*dWeight;
+			dVelLeft -= dRotVel*dWeight;
 		}
 		//if the angles are similar, the robot drives forward in order to approach his destionation
 		else
 		{
-			dVelRight += dMaxVel;
-			dVelLeft += dMaxVel;
+			dVelRight += dMaxVel*dWeight;
+			dVelLeft += dMaxVel*dWeight;
 		}
 		return 1;
 	}
 	else return 0;
+
 }

@@ -1579,6 +1579,10 @@ std_msgs/Header.h
 /home/mario/ros_workspace/mmrprojekt/src/libROBOT.cpp
 libROBOT.h
 /home/mario/ros_workspace/mmrprojekt/src/libROBOT.h
+angles/angles.h
+/home/mario/ros_workspace/mmrprojekt/src/angles/angles.h
+string.h
+-
 
 /home/mario/ros_workspace/mmrprojekt/src/libROBOT.h
 stdio.h
@@ -1620,7 +1624,7 @@ string
 stdlib.h
 /home/mario/ros_workspace/mmrprojekt/src/stdlib.h
 math.h
-/home/mario/ros_workspace/mmrprojekt/src/math.h
+-
 sstream
 -
 vector
@@ -2135,6 +2139,14 @@ geometry_msgs/Point32.h
 /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/geometry_msgs/Point32.h
 sensor_msgs/ChannelFloat32.h
 /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/cpp/include/sensor_msgs/sensor_msgs/ChannelFloat32.h
+
+/opt/ros/electric/stacks/geometry/angles/include/angles/angles.h
+algorithm
+-
+cmath
+-
+stdio.h
+-
 
 /opt/ros/electric/stacks/geometry/tf/include/tf/exceptions.h
 stdexcept
